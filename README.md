@@ -8,5 +8,5 @@
 
 # Screenshot
 
-![截图](https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot1.jpeg =200x200)
-![截图](https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot2.jpeg =200x200)
+![截图](https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot1.jpeg){:height="50%" width="50%"}
+![截图](https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot2.jpeg){:height="50%" width="50%"}
