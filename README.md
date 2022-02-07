@@ -8,5 +8,4 @@
 
 # Screenshot
 
-<img src="https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot1.jpeg" width="400" height="800">
-<img src="https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot2.jpeg" width="400" height="800">
+<img src="https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot1.jpeg" width="400" height="800"><img src="https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot2.jpeg" width="400" height="800">
