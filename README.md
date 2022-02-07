@@ -1,16 +1,10 @@
 # music
+一个多功能的音乐播放器
+# Features
 
-A new Flutter project.
+- [x] 支持本地mp3格式音乐播放
+- [ ] 支持网易云,QQ音乐等流媒体音乐搜索播放
+- [ ] 支持自建音乐网盘的存储与播放
 
-## Getting Started
+# Screenshot
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
