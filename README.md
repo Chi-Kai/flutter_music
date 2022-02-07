@@ -8,3 +8,4 @@
 
 # Screenshot
 
+![截图](https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot1.jpeg)
