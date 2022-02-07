@@ -9,4 +9,4 @@
 # Screenshot
 
 ![截图](https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot1.jpeg){:height="50%" width="50%"}
-![截图](https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot2.jpeg){:height="50%" width="50%"}
+<img src="https://github.com/Chi-Kai/flutter_music/blob/main/images/sreenshot2.jpeg" width="400" alt"截图">
