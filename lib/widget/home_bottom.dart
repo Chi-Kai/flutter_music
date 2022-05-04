@@ -38,7 +38,8 @@ class _HomeBottomState extends State<HomeBottom> {
                   width: 12,
                 ),
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+ //                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Obx(() => SizedBox(
                           width: 180,

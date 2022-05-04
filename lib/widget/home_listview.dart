@@ -1,3 +1,4 @@
+// 切换菜单栏 重新构建问题
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music/controller/change_controller.dart';
@@ -12,25 +13,21 @@ class MusicList extends StatefulWidget {
 }
 
 class _MusicListState extends State<MusicList> {
-  //bool hasmusic = false; //是否有音乐正在播放
-  static int nowplay = -1; // 正在播放的音乐id  使用静态，切换页面后还保持
-  List<Music> songs = [];
+  //static int nowplay = -1; // 正在播放的音乐id  使用静态，切换页面后还保持
   final c = Get.put(ChangeController());
 
   @override
   void initState() {
     super.initState();
-    getsongs().then((value) {
-      setState(() {
-        songs = value;
-      });
-    });
+    c.getlocalfile();
   }
+
   @override
-  void reassemble(){
-    super.reassemble();
-    print(ChangeController.to.player.value.playerState.processingState);
+  void dispose() {
+    super.dispose();
+    c.getlocalfile();
   }
+
 
   _buildlist(BuildContext context, Music music, int index) {
     return Container(
@@ -43,7 +40,7 @@ class _MusicListState extends State<MusicList> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              nowplay == index
+              c.nowplay == index
                   ? IconButton(
                       onPressed: () => _onpressfunc(
                           index, music.name, music.singer, music.path),
@@ -58,12 +55,12 @@ class _MusicListState extends State<MusicList> {
                   music.name,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                      color: nowplay == index ? Colors.black : Colors.grey,
+                      color: c.nowplay == index ? Colors.black : Colors.grey,
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              nowplay == index
+              c.nowplay == index
                   ? IconButton(
                       onPressed: () {},
                       icon: SvgPicture.asset('assets/icons/Sound_wave.svg'),
@@ -75,7 +72,7 @@ class _MusicListState extends State<MusicList> {
             music.time,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-                color: nowplay == index ? Colors.black : Colors.grey,
+                color: c.nowplay == index ? Colors.black : Colors.grey,
                 fontSize: 18,
                 fontWeight: FontWeight.bold),
           )
@@ -88,22 +85,22 @@ class _MusicListState extends State<MusicList> {
   _onpressfunc(int index, String name, String singername, String path) {
     // flutter 的 类是引用传递的
     setState(() {
-      nowplay = index;
-      c.changeName(name, singername, path);
+      //nowplay = index;
+      c.changelocalsong(name, singername, path, index);
       c.playerstart();
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        itemCount: songs.length,
-        itemBuilder: (BuildContext context, int index) {
-          final Music music = songs[index];
-          return _buildlist(context, music, index);
-        },
-      ),
-    );
+    return GetBuilder<ChangeController>(builder: (_) {
+      return Expanded(
+          child: ListView.builder(
+              itemCount: ChangeController.to.localmusic.length,
+              itemBuilder: (BuildContext context, int index) {
+                final Music music = ChangeController.to.localmusic[index];
+                return _buildlist(context, music, index);
+              }));
+    });
   }
 }
